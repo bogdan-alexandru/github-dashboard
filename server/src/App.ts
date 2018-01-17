@@ -30,6 +30,16 @@ class App {
          * API endpoints */
         let router = express.Router();
 
+		const options: cors.CorsOptions = { allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token"],
+		credentials: true,
+		methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+		origin: 'http://localhost:4200',
+		preflightContinue: false
+		};
+
+		router.use(cors(options));
+		router.options("*", cors(options));
+  
         // placeholder route handler
         router.get('/', (req, res, next) => {
             res.json({
