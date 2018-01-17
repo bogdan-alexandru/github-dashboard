@@ -1,0 +1,14 @@
+<table>
+  <thead>
+  <th>Name</th>
+  <th>Description</th>
+  <th>CreatedAt</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of rows">
+    <td>{{row.name}}</td>
+    <td>{{row.description}}</td>
+    <td>{{row.createdAt}}</td>
+  </tr>
+  </tbody>
+</table>
